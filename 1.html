@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <style type="text/css" media="screen">
+    #chart {
+        width: 600px;
+        height: 400px;
+    }
+    </style>
+</head>
+
+<body>
+    <script src="https://cdn.bootcss.com/echarts/4.1.0.rc2/echarts-en.common.js"></script>
+    <div id="chart"></div>
+    <script type="text/javascript" src="test.js"></script>
+    <script type="text/javascript">
+    const option = {
+        dataset: {
+            source: empsRows
+        },
+        xAxis: {
+            type: 'category'
+        },
+        yAxis: {
+            type: 'value'
+        },
+        series: {
+            type: 'scatter',
+            encode: {
+                x: 'Firstname',
+                y: 'Salary'
+            }
+        }
+    }
+
+    myChart.setOption(option)
+    const chartEl = document.querySelector('#chart')
+    const myChart = echarts.init(chartEl)
+    </script>
+</body>
+
+</html>
